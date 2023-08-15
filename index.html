@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title> Sqrt finder </title>
+	<style>
+		* { font-size:50px; font-family:Impact;}
+		body {background-color:lightyellow;}
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			if (num.value == "")
+			{
+				alert("u did not enter an integer");
+				ans.innerHTML = "";
+				num.focus;
+				return;
+			}
+			let n = parseFloat(num.value);
+			if(n < 0)
+			{
+				alert("u did not enter an integer");
+				ans.innerHTML = "";
+				num.focus;
+				return;
+			}
+			let r = Math.sqrt(n)  ;
+			ans.innerHTML = "square root =" + r.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1> Even Odd Finder </h1>
+	<form onsubmit="check()">
+	<input type="number" id="num" placeholder="enter a number"></input>
+	<br><br>
+	<input type="submit" value="find sqrt"></input>
+	</form>
+	<h1 id="ans"></h1>
+</center>
+</body>
+</html>
